@@ -1,91 +1,233 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 
+:root {
+	--bg-nav: #ff6900;
+	--bg-footer: #000000;
+	--font-size: 14px;
+	--height-navbar: 3rem
 }
 
 html {
-  background-color: white
+	font-family: sans-serif;
+	font-size: var(--font-size);
 }
 
 body {
-    font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
+	margin-top: var(--height-navbar);
+
 }
 
 a {
 	text-decoration: none;
 }
 
-header .container {
-    height: 100%;
-}
-
-.container  {
-    display: flex;
-    background-color: rgb(100%, 41%, 0%);
-    max-width: 1000px;
+.container {
+	max-width: 1100px;
 	margin-inline: auto;
 	padding-inline: 1rem;
 }
 
-img {
-  height: 100%;
-  max-width: 100%;
-  vertical-align: middle;
+/* navbar */
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: var(--height-navbar);
+	background-color: var(--bg-nav);
+	z-index: 99;
 }
 
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+nav .container {
+	display: flex;
+	justify-content: space-between;
+	height: 100%;
 }
 
-.cards-item {
-  display: flex;
-  padding: 1rem;
+nav ul {
+	list-style: none;
+}
 
+nav .logo {
+	display: flex;
+	align-items: center;
+}
+
+nav .logo img {
+	height: 70%;
+}
+
+nav .categories-menu,
+nav .user-menu {
+	display: flex;
+	gap: 1rem;
+}
+
+nav li {
+	display: flex;
+	align-items: center;
+}
+
+nav a {
+	color: white;
+}
+
+/* main */
+
+main {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+main .container {
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .card {
-  background-color: white;
-  border-radius: 0.25rem;
-  box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
- }
-
-
-.card-content {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  padding: 1rem;
+	flex: 0 0 calc(100% / 3);
+	padding: 1rem .5rem;
 }
 
-.card-image {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: contrast(70%);
-  filter: saturate(180%);
-  overflow: hidden;
-  }
-
-.card-title {
-  color: grey;
-  font-size: 1.25rem;
-  font-weight: 300;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+.card:hover {
+	cursor: pointer;
 }
 
-.card-text {
-  flex: 1 1 auto;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  margin-bottom: 1.25rem;
+.card .image-container {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 1 / 1.4;
+	overflow: hidden;
+}
+
+.card img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.card1 .img-front {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.card1 .image-container:hover .img-front {
+	z-index: -1;
+}
+.card2 .img-front {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.card2 .image-container:hover .img-front {
+	z-index: -1;
+}
+
+.card3 .img-front {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.card3 .image-container:hover .img-front {
+	z-index: -1;
+}
+
+.card4 .img-front {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.card4 .img-front:hover {
+	z-index: -1;
+}
+
+
+.card5 img {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.card5 .image-container:hover img {
+	z-index: -1;
+}
+
+.card6 img {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.card6 .image-container:hover img {
+	z-index: -1;
+}
+
+.card .heart {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 10px;
+	right: 0;
+	width: 3rem;
+	height: 3rem;
+	font-size: 2rem;
+	background-color: white;
+}
+
+.card .heart:hover {
+	color: red;
+}
+
+.card .tags {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 3rem;
+}
+
+.card .tag {
+	display: inline-block;
+	padding: .5em .7em;
+	color: white;
+	font-weight: bold;
+}
+
+.card .tag-red {
+	background-color: red;
+}
+
+.card .tag-green {
+	background-color: green;
+}
+
+.card .contents .title {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.card .contents .price-new {
+	color: red;
+	font-weight: bold;
+}
+
+.card .contents .price-old {
+	text-decoration: line-through;
+}
+
+/* footer */
+
+footer {
+	padding-top: 3rem;
+	padding-bottom: 2rem;
 }
